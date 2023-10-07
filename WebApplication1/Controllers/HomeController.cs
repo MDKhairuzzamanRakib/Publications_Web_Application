@@ -17,8 +17,17 @@ namespace WebApplication1.Controllers
         {
             var viewModelData = db.Articles.AsEnumerable().Select(a => new ArticleViewModel
             {
-
+                ArticleId = a.ArticleId,
+                Title = a.Title,
+                PublishDate = a.PublishDate,
+                Tags=string.Join(", ",a.ArticleTags.Select(t=>t.Tag.TagName).ToArray())
             });
+            return View(viewModelData);
+        }
+
+        public ActionResult Create()
+        {
+            ViewBag.checkBoxData=db.Tags.ToList();
             return View();
         }
 

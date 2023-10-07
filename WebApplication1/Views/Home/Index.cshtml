@@ -1,4 +1,37 @@
-﻿@{
+﻿@model IEnumerable<WebApplication1.Models.ViewModels.ArticleViewModel>
+@{
     ViewBag.Title = "Home Page";
 }
+
+
+<div class="row px-3 pb-2">
+    <div class="col-12">
+        <h2 class="display-4">Article Informations</h2>
+        <div class="d-flex justify-content-end">
+            <a href="@Url.Action("Create","Home")" class="btn btn-primary btn-sm mb-2"><i class="fa fa-plus-circle"></i> Add New</a>
+        </div>
+        <table class="table table-bordered table-striped table-sm">
+            <thead class="table-primary">
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.Title)</th>
+                    <th>@Html.DisplayNameFor(x => x.PublishDate)</th>
+                    <th>@Html.DisplayNameFor(x => x.Tags)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(x => item.Title)</td>
+                        <td>@Html.DisplayFor(x => item.PublishDate)</td>
+                        <td>@Html.DisplayFor(x => item.Tags)</td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
 

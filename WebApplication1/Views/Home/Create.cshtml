@@ -1,0 +1,22 @@
+﻿@model WebApplication1.Models.Article 
+@{
+    ViewBag.Title = "Create";
+}
+@using WebApplication1.Models.InputModel;
+
+
+<div class="row gy-2 px-3">
+    <div class="col-12">
+        <h2 class="display-6">Create Article</h2>
+        <h4></h4>
+    </div>
+</div>
+
+1.27s
+
+
+<div class="d-flex justify-content-between">
+    <a href="@Url.Action("Index","Home")" class="btn btn-primary btn-sm"><i class="fa fa-arrow-circle-left"></i> Back to List</a>
+    <button type="submit" value="Save" class="btn btn-success btn-sm"><i class="fa fa-save"></i> Save</button>
+</div>
+
